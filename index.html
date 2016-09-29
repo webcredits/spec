@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Webcredits</title>
+    <script
+     src='https://www.w3.org/Tools/respec/respec-w3c-common'
+     class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+        specStatus: "ED",
+        editors: [{
+          name: "Melvin Carvalho",
+          url: "http://your-site.com",
+        }],
+        processVersion: 2016,
+        edDraftURI: "https://github.com/webcredits/webcredits",
+        shortName: "webcredits"
+      };
+    </script>
+  </head>
+  <body>
+    <section id='abstract'>
+      <p>
+        Webcredits is a a way to model credits and payments between agents on
+        the world wide web, using Linked Data.
+      </p>
+    </section>
+    <section id='sotd'>
+      <p>
+        This document in an informal draft published at the w3c web payments
+        community group
+      </p>
+    </section>
+    <section>
+      <h2>Introduction</h2>
+      The vast majority of money in the world exists in the form of Credit.
+      Yet there is no way to easily model a credit between counterparites on
+      the web using the Linked Data Cloud.  This specification proposes a
+      vocabulary and examples that model credits between two agents, which can
+      also be used to send credits to each other, building up a ledger of
+      balances.  In this sense, a modular kernel of an economy can be created while
+      delegating other functions such as, authentication, signing and identity
+      to other specifications.
+
+    </section>
+
+    <section>
+      <h2>Ledgers</h2>
+
+      A ledger is a two column list that contains a URI and a balance, or amount.
+      Each Ledger will generally be linked to a wallet that contains the default
+      currency.
+
+      <pre class="turtle">
+      <URI> cc : amount 1.23 .
+      </pre>
+      <p>The <dfn>Amount</dfn> indicates the balance of the agent.</p>
+    </section>
+
+    <section>
+      <h2>Credits</h2>
+
+      <pre class="turtle">
+      <#this> a cc : Credit;
+        cc : source <URI> ;
+        cc : destination <URI> ;
+        cc : amount <URI> .
+      </pre>
+      <p>The <dfn>Source</dfn> indicates the source of the credit.</p>
+      <p>The <dfn>Destination</dfn> indicates the destination of the credit.</p>
+      <p>The <dfn>Amount</dfn> indicates the amount of the credit.</p>
+    </section>
+
+    <section>
+      <h2>Wallets</h2>
+      A wallet is a container of a ledger, it is the authority by which the
+      ledger is defined.  It also will show how to find balances, and change the
+      state of the ledger.
+
+      <pre class="turtle">
+      <#this> a Wallet ;
+      cc : api <URI>
+
+      </pre>
+      <p>The <dfn>API</dfn> shows where to get balances and add new credits.</p>
+    </section>
+
+
+  </body>
+</html>
