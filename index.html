@@ -53,7 +53,7 @@
       currency.
 
       <pre class="turtle">
-      <URI> cc : amount 1.23 .
+      URI cc : amount 1.23 .
       </pre>
       <p>The <dfn>Amount</dfn> indicates the balance of the agent.</p>
     </section>
@@ -63,9 +63,9 @@
 
       <pre class="turtle">
       <#this> a cc : Credit;
-        cc : source <URI> ;
-        cc : destination <URI> ;
-        cc : amount <URI> .
+        cc : source URI ;
+        cc : destination URI ;
+        cc : amount URI .
       </pre>
       <p>The <dfn>Source</dfn> indicates the source of the credit.</p>
       <p>The <dfn>Destination</dfn> indicates the destination of the credit.</p>
@@ -80,7 +80,7 @@
 
       <pre class="turtle">
       <#this> a Wallet ;
-      cc : api <URI>
+      cc : api URI
 
       </pre>
       <p>The <dfn>API</dfn> shows where to get balances and add new credits.</p>
