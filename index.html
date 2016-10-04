@@ -101,6 +101,9 @@
           <p>The <dfn>Source</dfn> indicates the source of the credit.</p>
           <p>The <dfn>Destination</dfn> indicates the destination of the credit.</p>
           <p>The <dfn>Amount</dfn> indicates the amount of the credit.</p>
+          <p>A cc : timestamp is an optional field of type xsd date</p>
+          <p>A cc : description is an optional field of type xsd string</p>
+          <p>A cc : currency is an optional field of type anyURI</p>
 
         </section>
 
@@ -130,6 +133,8 @@
         A wallet is a container of a ledger, it is the authority by which the
         ledger is defined.  It also will show how to find balances, and change the
         state of the ledger.
+
+        An API will typically be a self describing resource which will allow you to get the balance for a given user or recent transactions.  
 
         <section>
           <h3>Example</h3>
