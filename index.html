@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <title>Webcredits</title>
-    <script
-     src='https://www.w3.org/Tools/respec/respec-w3c-common'
-     class='remove'></script>
-    <script class='remove'>
-      var respecConfig = {
-        specStatus: "CG-DRAFT",
-        editors: [{
-          name: "Melvin Carvalho",
-          url: "https://melvincarvalho.com/#me",
-        }],
-        processVersion: 2016,
-        edDraftURI: "https://webcredits.github.io/spec/",
-        shortName: "webcredits"
-      };
-    </script>
-  </head>
-  <body>
-    <section id='abstract'>
-      <p>
-        Webcredits is an extremely simple way to model decentralized payments, balances and wallets on
-        the world wide web, using Linked Data.  This specification deals with credits between counterparites, a ledger that stores balances, and a wallet to allow discovery.
-      </p>
-    </section>
-    <section id='sotd'>
-      <p>
-        This document in an informal draft discussed in the <a href="https://www.w3.org/community/webpayments/">w3c web payments
+<head>
+  <meta charset='utf-8'>
+  <title>Webcredits</title>
+  <script
+  src='https://www.w3.org/Tools/respec/respec-w3c-common'
+  class='remove'></script>
+  <script class='remove'>
+  var respecConfig = {
+    specStatus: "CG-DRAFT",
+    editors: [{
+      name: "Melvin Carvalho",
+      url: "https://melvincarvalho.com/#me",
+    }],
+    processVersion: 2016,
+    edDraftURI: "https://webcredits.github.io/spec/",
+    shortName: "webcredits"
+  };
+  </script>
+
+  <style>.turtle .hll { background-color: #ffffcc }
+
+    </style>
+
+</head>
+<body>
+  <section id='abstract'>
+    <p>
+      Webcredits is an extremely simple way to model decentralized payments, balances and wallets on
+      the world wide web, using Linked Data.  This specification deals with credits between counterparites, a ledger that stores balances, and a wallet to allow discovery.
+    </p>
+  </section>
+  <section id='sotd'>
+    <p>
+      This document in an informal draft discussed in the <a href="https://www.w3.org/community/webpayments/">w3c web payments
         community group</a>.
       </p>
     </section>
@@ -47,94 +52,95 @@
         <h3>Web Payments Community Group</h3>
 
         Webcredits is one of several related specifications being discussed by the <a href="https://www.w3.org/community/webpayments/">w3c web payments
-        community group</a>.
-      </section>
+          community group</a>.
+        </section>
 
 
-      <section>
-        <h3>Overview</h3>
+        <section>
+          <h3>Overview</h3>
 
-        <figure>
+          <figure>
             <img src="summary.svg" alt="">
             <figcaption>Overview of webcredits.</figcaption>
-        </figure>
+          </figure>
+
+        </section>
+
+
+        <section>
+          <h3>Vocabulary</h3>
+
+          The ontology / vocabulary is at <a href="https://cc.rww.io/vocab">https://w3id.org/cc</a>.  The prefix cc will be
+          used in examples, which use the Turtle serialization.
+
+        </section>
+
+        <section>
+          <h3>Summary</h3>
+
+          Webcredits will show how to model ledgers, credits and wallets, the building blocks of financial systems.
+        </section>
 
       </section>
 
 
       <section>
-        <h3>Vocabulary</h3>
+        <h2>Credits</h2>
 
-        The ontology / vocabulary is at <a href="https://cc.rww.io/vocab">https://w3id.org/cc</a>.  The prefix cc will be
-        used in examples, which use the Turtle serialization.
+        Credits are the main class in webcredits.  They represent a payment from one counterparty to another.  This creates a change in the ledger.
+
+        <section>
+          <h3>Example</h3>
+
+          <pre class="turtle">
+            <#this> a cc : Credit;
+            cc : source <#alice> ;
+            cc : destination <#bob> ;
+            cc : amount 11.11 .
+          </pre>
+          <p>The <dfn>Source</dfn> indicates the source of the credit.</p>
+          <p>The <dfn>Destination</dfn> indicates the destination of the credit.</p>
+          <p>The <dfn>Amount</dfn> indicates the amount of the credit.</p>
+
+        </section>
 
       </section>
 
       <section>
-        <h3>Summary</h3>
+        <h2>Ledgers</h2>
 
-        Webcredits will show how to model ledgers, credits and wallets, the building blocks of financial systems.
+        A ledger is a two column list that contains a URI and a balance, or amount.
+        Each Ledger will generally be linked to a wallet that contains the default
+        currency.
+
+        <section>
+          <h3>Example</h3>
+
+          <pre class="turtle">
+            <#me> cc : amount 1.23 .
+          </pre>
+          <p>The <dfn>Amount</dfn> indicates the balance of the agent.</p>
+
+        </section>
       </section>
 
-    </section>
-
-
-    <section>
-      <h2>Credits</h2>
-
-      Credits are the main class in webcredits.  They represent a payment from one counterparty to another.  This creates a change in the ledger.
 
       <section>
-        <h3>Example</h3>
+        <h2>Wallets</h2>
+        A wallet is a container of a ledger, it is the authority by which the
+        ledger is defined.  It also will show how to find balances, and change the
+        state of the ledger.
 
-        <pre class="turtle">
-        <#this> a cc : Credit;
-          cc : source URI ;
-          cc : destination URI ;
-          cc : amount URI .
-        </pre>
-        <p>The <dfn>Source</dfn> indicates the source of the credit.</p>
-        <p>The <dfn>Destination</dfn> indicates the destination of the credit.</p>
-        <p>The <dfn>Amount</dfn> indicates the amount of the credit.</p>
-
-      </section>
-
-    </section>
-
-    <section>
-      <h2>Ledgers</h2>
-
-      A ledger is a two column list that contains a URI and a balance, or amount.
-      Each Ledger will generally be linked to a wallet that contains the default
-      currency.
-
-      <section>
-        <h3>Example</h3>
-
-        <pre class="turtle">
-        URI cc : amount 1.23 .
-        </pre>
-        <p>The <dfn>Amount</dfn> indicates the balance of the agent.</p>
-
-      </section>
-    </section>
+        <section>
+          <h3>Example</h3>
 
 
-    <section>
-      <h2>Wallets</h2>
-      A wallet is a container of a ledger, it is the authority by which the
-      ledger is defined.  It also will show how to find balances, and change the
-      state of the ledger.
-
-      <section>
-        <h3>Example</h3>
-
-
-        <pre class="turtle">
-        <#this> a Wallet ;
-        cc : inbox URI ;
-        cc : api URI .
-      </section>
+          <pre class="turtle">
+            <#this> a Wallet ;
+            cc : inbox <#inbox> ;
+            cc : api <#api> .
+          </pre>
+        </section>
 
       </pre>
       <p>The <dfn>API</dfn> shows where to get balances and add new credits.</p>
@@ -143,4 +149,4 @@
 
 
   </body>
-</html>
+  </html>
