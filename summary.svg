@@ -1,0 +1,19 @@
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <ellipse stroke="#000" ry="38.499999" rx="58" id="svg_1" cy="184.499999" cx="275" stroke-width="1.5" fill="#fff"/>
+  <text stroke="#000" transform="matrix(1.3738317489624023,0,0,1.4837208986282349,-100.32709562778473,-49.37732235528529) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_2" y="167.808778" x="239.714285" stroke-width="0" fill="#000000">Wallet</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_3" y="272" x="165" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Ledger</text>
+  <text stroke="#000" transform="matrix(1,0,0,1.1481481790542603,0,-33.48148846626282) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_4" y="269.774192" x="325" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#000000">Credit</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_10" y2="249" x2="211" y1="214" x1="234" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_11" y2="248" x2="345" y1="214" x1="317" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+ </g>
+</svg>
