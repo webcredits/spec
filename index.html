@@ -99,17 +99,17 @@
           <h3>Example</h3>
 
           <pre class="turtle">
-            <#this> a cc : Credit;
-            cc : source <#alice> ;
-            cc : destination <#bob> ;
-            cc : amount 11.11 .
+            <#this> a cc:Credit;
+            cc:source <#alice> ;
+            cc:destination <#bob> ;
+            cc:amount 11.11 .
           </pre>
           <p>The <dfn>Source</dfn> indicates the source of the credit.</p>
           <p>The <dfn>Destination</dfn> indicates the destination of the credit.</p>
           <p>The <dfn>Amount</dfn> indicates the amount of the credit.</p>
-          <p>A cc : timestamp is an optional field of type xsd date</p>
-          <p>A cc : description is an optional field of type xsd string</p>
-          <p>A cc : currency is an optional field of type anyURI</p>
+          <p>A cc:timestamp is an optional field of type xsd date</p>
+          <p>A cc:description is an optional field of type xsd string</p>
+          <p>A cc:currency is an optional field of type anyURI</p>
 
         </section>
 
@@ -126,8 +126,8 @@
           <h3>Example</h3>
 
           <pre class="turtle">
-            <#alice> cc : amount 1.23 .
-            <#bob> cc : amount 3.77 .
+            <#alice> cc:amount 1.23 .
+            <#bob> cc:amount 3.77 .
           </pre>
           <p>The <dfn>Amount</dfn> indicates the balance of the agent.</p>
 
@@ -152,9 +152,9 @@
 
           <pre class="turtle">
             <#this> a Wallet ;
-            cc : inbox <#inbox> ;
-            cc : currency <#mark> ;
-            cc : api <#api> .
+            cc:inbox <#inbox> ;
+            cc:currency <#mark> ;
+            cc:api <#api> .
           </pre>
         </section>
 
